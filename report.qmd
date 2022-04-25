@@ -5,6 +5,7 @@ format:
     toc: true
     echo: false
     keep-hidden: true
+    theme: united
 execute: 
   echo: false
 ---
