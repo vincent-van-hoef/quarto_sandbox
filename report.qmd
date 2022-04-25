@@ -30,9 +30,12 @@ viewof bill_length_min = Inputs.range(
 )
 viewof islands = Inputs.checkbox(
   ["Torgersen", "Biscoe", "Dream"], 
-  { value: ["Torgersen", "Biscoe"], 
-    label: "Islands:"
-  }
+  { value: ["Torgersen", "Biscoe", "Dream"], 
+    label: "Islands:"}
+)
+viewof island_select = Inputs.select(
+  islands, 
+  { label: "Location:"}
 )
 ```
 
@@ -75,6 +78,18 @@ data = FileAttachment("./palmer-penguins.csv").csv({ typed: true })
 ```{ojs}
 filtered = data.filter(function(penguin) {
   return bill_length_min < penguin.bill_length_mm &&
-         islands.includes(penguin.island);
+         island_select.includes(penguin.island);
 })
 ```
+
+```{r}
+#| label: fig-r-margin
+#| fig-cap: "This is a simple R plot"
+#| fig-column: margin
+
+plot(1:100)
+```
+
+::: {.column-margin}
+This is a sidenote.
+:::
