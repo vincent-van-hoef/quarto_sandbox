@@ -5,10 +5,11 @@ format:
         code-fold: true
 ---
 
-A simple R plot is shown here
+A simple R plot is shown here @fig-r.
 
 ```{r}
-#| label: This is a somple R plot
+#| label: fig-r
+#| fig-cap: "This is a simple R plot"
 
 plot(1:10)
 ```
