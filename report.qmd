@@ -1,0 +1,14 @@
+---
+title: "Quarto Report"
+format:
+    html:
+        code-fold: true
+---
+
+A simple R plot is shown here
+
+```{r}
+#| label: This is a somple R plot
+
+plot(1:10)
+```
