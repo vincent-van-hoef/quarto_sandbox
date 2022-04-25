@@ -90,6 +90,37 @@ filtered = data.filter(function(penguin) {
 plot(1:100)
 ```
 
+:::{.callout-note}
+Note that there are five types of callouts, including:
+`note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+:::{.callout-tip}
+## Tip With Caption
+
+This is an example of a callout with a caption.
+:::
+
+:::{.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+
 ::: {.column-margin}
 This is a sidenote.
 :::
+
+```{ojs}
+import { aq, op } from '@uwdata/arquero'
+penguins = aq.loadCSV("palmer-penguins.csv")
+
+penguins
+  .groupby('species')
+  .filter(p => p.body_mass_g > 0)
+  .rollup({
+    count: op.count(),
+    avg_mass: op.average('body_mass_g')
+   })
+  .view()
+```
